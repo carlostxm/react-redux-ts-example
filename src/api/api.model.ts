@@ -1,3 +1,3 @@
 export interface CounterDTO {
-  data: number;
+  amount: number;
 }

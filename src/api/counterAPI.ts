@@ -1,6 +1,15 @@
-// A mock function to mimic making an async request for data
-export const fetchCount = (amount = 1): Promise<number> => {
-  return new Promise<number>((resolve) =>
-    setTimeout(() => resolve(amount), 500)
-  );
+import axios from "axios";
+import { CounterDTO } from "./api.model";
+
+export const API_URL = "http://localhost:3004/counter";
+
+export const fetchCount = () => {
+  return axios
+    .get<CounterDTO>(API_URL)
+    .then((response) => mapCountFromDTOToModel(response.data))
+    .catch((message) => Promise.reject(message));
+};
+
+const mapCountFromDTOToModel = (dto: CounterDTO): number => {
+  return dto.amount;
 };
