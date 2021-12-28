@@ -7,7 +7,8 @@ export const incrementIfOdd =
   (amount: number): Thunk =>
   (dispatch: Dispatch, getState: () => State) => {
     const currentValue = selectCount(getState());
-    if (currentValue % 2 === 1) {
+    const currentValueIsOdd = currentValue % 2 === 1;
+    if (currentValueIsOdd) {
       dispatch(incrementByAmount(amount));
     }
   };

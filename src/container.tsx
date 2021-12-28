@@ -18,7 +18,7 @@ const mapStateToProps = (state: State): AppDataProps => ({
 const mapDispatchToProps = (dispatch: Dispatch): AppFunctionalProps => ({
   onDecrement: () => dispatch(decrement()),
   onIncrement: () => dispatch(increment()),
-  onIncrementAsync: () => dispatch(incrementAsync()),
+  onIncrementAsync: (amount) => dispatch(incrementAsync(amount)),
   onIncrementByAmount: (amount) => dispatch(incrementByAmount(amount)),
   onIncrementIfOdd: (amount) => dispatch(incrementIfOdd(amount)),
 });

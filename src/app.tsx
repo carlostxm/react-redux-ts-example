@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./app.css";
-import { Counter } from "./app/components";
+import { Counter } from "./components";
 
 export interface AppDataProps {
   count: number;
