@@ -10,6 +10,9 @@ interface CounterProps {
   onIncrementIfOdd: (amount: number) => void;
 }
 export const DEFAULT_AMOUNT_VALUE = 2;
+
+export const COUNTER_TESTID = "counter-testid";
+
 export const Counter: React.FC<CounterProps> = (props) => {
   const {
     count,
@@ -19,7 +22,7 @@ export const Counter: React.FC<CounterProps> = (props) => {
     onIncrementAsync,
     onIncrementIfOdd,
   } = props;
-  const [incrementAmount, setIncrementAmount] = useState(DEFAULT_AMOUNT_VALUE);
+  const [incrementAmount, setIncrementAmount] = useState(count);
 
   const incrementValue = Number(incrementAmount) || 0;
 
@@ -42,7 +45,9 @@ export const Counter: React.FC<CounterProps> = (props) => {
         >
           -
         </button>
-        <span className={styles.value}>{count}</span>
+        <span data-testid={COUNTER_TESTID} className={styles.value}>
+          {count}
+        </span>
         <button
           className={styles.button}
           aria-label="Increment value"
