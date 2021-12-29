@@ -1,7 +1,8 @@
 import { counterReducer } from ".";
 import { BaseAction, IncrementByAmountAction } from "../actions";
 import { ACTIONS_ENUM } from "../actions/action.const";
-import { CounterState, CounterStatus } from "./counterReducer";
+import { CounterStatus } from "../model";
+import { CounterState } from "./counterReducer";
 
 test("should decrement in one unit when decrement action is received", () => {
   const INITIAL_STATE: CounterState = {
