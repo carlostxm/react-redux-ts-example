@@ -1,11 +1,6 @@
 import { BaseAction, IncrementByAmountAction } from "../actions";
 import { ACTIONS_ENUM } from "../actions/action.const";
-
-export enum CounterStatus {
-  idle = "idle",
-  loading = "loading",
-  failed = "failed",
-}
+import { CounterStatus } from "../model";
 
 export interface CounterState {
   value: number;
